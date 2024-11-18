@@ -1,10 +1,10 @@
-import { HeadphonesPage } from "./components/headphones-page/headphones-page";
 import { Layout } from "./components/layout/layout";
+import { Restaurants } from "./components/restaurants/restaurants";
 
 export const App = () => {
   return (
-    <Layout sidebar={<div>Sidebar</div>}>
-      <HeadphonesPage />;
+    <Layout>
+      <Restaurants />
     </Layout>
   );
 };
