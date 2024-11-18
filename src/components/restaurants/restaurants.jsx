@@ -5,9 +5,7 @@ import { Tabs } from "../tabs/tabs";
 
 export const Restaurants = () => {
   const [selectedRestaurant, setSelectedRestaurant] = useState(
-    restaurants.find(
-      (restaurant) => restaurant.id === "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2"
-    )
+    restaurants.find((restaurant) => restaurant.id === restaurants[0].id)
   );
 
   const handleTabClick = (id) => {
