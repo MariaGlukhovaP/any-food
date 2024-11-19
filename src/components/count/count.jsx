@@ -1,48 +1,20 @@
-// import { useState } from "react";
-
-// const hardCalculations = () => {
-//   let sum = 0;
-//   for (let i = 0; i < 1000; i++) {
-//     sum++;
-//   }
-//   return 0;
-// };
-
-// export const Count = ({ onChange }) => {
-//   const [value, setValue] = useState(() => hardCalculations());
-
-//   let amount = 0;
-
-//   const increase = () => {
-//     setValue((currentValue) => currentValue + 1);
-//     amount++;
-//     onChange(value);
-//   };
-
-//   const decrease = () => {
-//     setValue(value - 1);
-//     amount--;
-//     onChange(value);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={increase}>+</button>
-//       <div>
-//         value - {value} amount - {amount}
-//       </div>
-//       <button onClick={decrease}>-</button>
-//     </div>
-//   );
-// };
-import { useCount } from "./use-count";
+import { useState } from "react";
 
 export const Count = () => {
-  const { value, increase, decrease } = useCount();
+  const [value, setValue] = useState(0);
+
+  const increase = () => {
+    value < 5 && setValue(value + 1);
+  };
+
+  const decrease = () => {
+    value > 0 && setValue(value - 1);
+  };
+
   return (
     <div>
       <button onClick={increase}>+</button>
-      <div>value - {value}</div>
+      {value}
       <button onClick={decrease}>-</button>
     </div>
   );
