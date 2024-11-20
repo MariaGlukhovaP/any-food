@@ -3,20 +3,43 @@ import { restaurants } from "../../constants/mock";
 import { Restaurant } from "../restaurant/restaurant";
 import { Tabs } from "../tabs/tabs";
 
-export const Restaurants = () => {
-  const [selectedRestaurant, setSelectedRestaurant] = useState(
-    restaurants.find((restaurant) => restaurant.id === restaurants[0].id)
+export const Restaurants = ({ title }) => {
+  const [selectedRestaurantId, setSelectedRestaurantId] = useState(
+    restaurants[0].id
   );
 
-  const handleTabClick = (id) => {
-    const restaurant = restaurants.find((restaurant) => restaurant.id === id);
-    setSelectedRestaurant(restaurant);
+  const selectedRestaurant = restaurants.find(
+    ({ id }) => id === selectedRestaurantId
+  );
+
+  const handleSetSelectedRestaurant = (id) => {
+    if (selectedRestaurantId === id) {
+      return;
+    }
+    setSelectedRestaurantId(id);
   };
 
   return (
-    <>
-      <Tabs restaurants={restaurants} onTabClick={handleTabClick} />
-      <Restaurant restaurant={selectedRestaurant} />
-    </>
+    <div>
+      <h1>{title}</h1>
+
+      {restaurants.map(({ name, id }) => (
+        <Tabs
+          key={id}
+          title={name}
+          onClick={() => handleSetSelectedRestaurant(id)}
+          isActive={id === selectedRestaurantId}
+        />
+      ))}
+
+      {selectedRestaurant && (
+        <Restaurant
+          id={selectedRestaurant.id}
+          name={selectedRestaurant.name}
+          menu={selectedRestaurant.menu}
+          reviews={selectedRestaurant.reviews}
+        />
+      )}
+    </div>
   );
 };

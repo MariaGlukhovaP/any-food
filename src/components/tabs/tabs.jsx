@@ -1,11 +1,7 @@
-export const Tabs = ({ restaurants, onTabClick }) => {
+export const Tabs = ({ title, onClick, isActive }) => {
   return (
-    <ul>
-      {restaurants.map((restaurant) => (
-        <li key={restaurant.id} onClick={() => onTabClick(restaurant.id)}>
-          {restaurant.name}
-        </li>
-      ))}
-    </ul>
+    <button disabled={isActive} onClick={onClick}>
+      {title}
+    </button>
   );
 };
