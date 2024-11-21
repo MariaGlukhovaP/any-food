@@ -1,5 +1,4 @@
-import { Count } from "../count/count";
-import { Ingredients } from "../ingredients/ingredients";
+import { DishCounter } from "../dish-counter/dish-counter";
 
 export const Dish = ({ name, price, ingredients }) => {
   if (!name || !price) return null;
@@ -9,8 +8,11 @@ export const Dish = ({ name, price, ingredients }) => {
       <p>
         <strong>{name}</strong> - ${price}
       </p>
-      <Ingredients ingredients={ingredients} />
-      <Count />
+      <div>
+        {ingredients.join(", ").charAt(0).toUpperCase() +
+          ingredients.join(", ").slice(1)}
+      </div>
+      <DishCounter />
     </li>
   );
 };

@@ -40,6 +40,30 @@ export const Restaurants = ({ title }) => {
           reviews={selectedRestaurant.reviews}
         />
       )}
+      {selectedRestaurant && (
+        <Restaurant
+          id={selectedRestaurant.id}
+          name={selectedRestaurant.name}
+          menu={selectedRestaurant.menu}
+          reviews={selectedRestaurant.reviews}
+        />
+      )}
+      {selectedRestaurant && (
+        <Restaurant
+          id={selectedRestaurant.id}
+          name={selectedRestaurant.name}
+          menu={selectedRestaurant.menu}
+          reviews={selectedRestaurant.reviews}
+        />
+      )}
+      {selectedRestaurant && (
+        <Restaurant
+          id={selectedRestaurant.id}
+          name={selectedRestaurant.name}
+          menu={selectedRestaurant.menu}
+          reviews={selectedRestaurant.reviews}
+        />
+      )}
     </div>
   );
 };

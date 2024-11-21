@@ -1,3 +1,6 @@
+import { ReviewForm } from "../review-form/review-form";
+import { Review } from "../review/review";
+
 export const Reviews = ({ reviews }) => {
   return (
     <section>
@@ -6,14 +9,12 @@ export const Reviews = ({ reviews }) => {
         text ? (
           <ul key={id}>
             <li>
-              <p>
-                <strong>{text}</strong> - {rating}★
-              </p>
-              <p>{user}</p>
+              <Review user={user} text={text} rating={rating} />
             </li>
           </ul>
         ) : null
       )}
+      <ReviewForm />
     </section>
   );
 };
