@@ -1,7 +1,7 @@
-export const Layout = ({ children, progressbar }) => {
+export const Layout = ({ children, progressBar }) => {
   return (
     <div>
-      {progressbar}
+      {progressBar}
       <header>
         <h1>Restaurants</h1>
       </header>
