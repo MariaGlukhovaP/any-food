@@ -1,8 +1,8 @@
 import { Counter } from "../counter/counter";
-import { useReviewForm } from "./use-review-form";
+import { useForm } from "./use-form";
 
 export const ReviewForm = () => {
-  const { form, setName, setText, increase, decrease, clear } = useReviewForm();
+  const { form, setName, setText, increase, decrease, clear } = useForm();
   const { name, text, rating } = form;
 
   return (

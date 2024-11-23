@@ -3,7 +3,7 @@ import { useReducer } from "react";
 const DEFAULT_FORM_VALUE = {
   name: "",
   text: "",
-  rating: 1,
+  rating: 5,
 };
 
 const SET_NAME_ACTION = "SET_NAME";
@@ -29,7 +29,7 @@ const reduser = (state, { type, payload }) => {
   }
 };
 
-export const useReviewForm = () => {
+export const useForm = () => {
   const [form, dispatch] = useReducer(reduser, DEFAULT_FORM_VALUE);
 
   const setName = (name) => {
