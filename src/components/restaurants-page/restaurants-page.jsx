@@ -3,7 +3,7 @@ import { restaurants } from "../../constants/mock";
 import { Restaurant } from "../restaurant/restaurant";
 import { Tabs } from "../tabs/tabs";
 
-export const Restaurants = ({ title }) => {
+export const RestaurantsPage = ({ title }) => {
   const [selectedRestaurantId, setSelectedRestaurantId] = useState(
     restaurants[0].id
   );
@@ -32,30 +32,6 @@ export const Restaurants = ({ title }) => {
         />
       ))}
 
-      {selectedRestaurant && (
-        <Restaurant
-          id={selectedRestaurant.id}
-          name={selectedRestaurant.name}
-          menu={selectedRestaurant.menu}
-          reviews={selectedRestaurant.reviews}
-        />
-      )}
-      {selectedRestaurant && (
-        <Restaurant
-          id={selectedRestaurant.id}
-          name={selectedRestaurant.name}
-          menu={selectedRestaurant.menu}
-          reviews={selectedRestaurant.reviews}
-        />
-      )}
-      {selectedRestaurant && (
-        <Restaurant
-          id={selectedRestaurant.id}
-          name={selectedRestaurant.name}
-          menu={selectedRestaurant.menu}
-          reviews={selectedRestaurant.reviews}
-        />
-      )}
       {selectedRestaurant && (
         <Restaurant
           id={selectedRestaurant.id}
