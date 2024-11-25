@@ -1,0 +1,9 @@
+.restaurantsTabsContainer {
+  height: 50px;
+  background-color: #e18504;
+  color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}

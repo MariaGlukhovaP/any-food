@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { restaurants } from "../../constants/mock";
 import { Restaurant } from "../restaurant/restaurant";
-import { Tabs } from "../tabs/tabs";
+import { Tab } from "../tab/tab";
 
-export const RestaurantsPage = ({ title }) => {
+import styles from "./restaurants-page.module.css";
+
+export const RestaurantsPage = () => {
   const [selectedRestaurantId, setSelectedRestaurantId] = useState(
     restaurants[0].id
   );
@@ -21,16 +23,16 @@ export const RestaurantsPage = ({ title }) => {
 
   return (
     <div>
-      <h1>{title}</h1>
-
-      {restaurants.map(({ name, id }) => (
-        <Tabs
-          key={id}
-          title={name}
-          onClick={() => handleSetSelectedRestaurant(id)}
-          isActive={id === selectedRestaurantId}
-        />
-      ))}
+      <div className={styles.restaurantsTabsContainer}>
+        {restaurants.map(({ name, id }) => (
+          <Tab
+            key={id}
+            title={name}
+            onClick={() => handleSetSelectedRestaurant(id)}
+            isActive={id === selectedRestaurantId}
+          />
+        ))}
+      </div>
 
       {selectedRestaurant && (
         <Restaurant

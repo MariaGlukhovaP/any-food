@@ -1,16 +1,15 @@
 import { useProgress } from "./use-progress";
 
+import styles from "./progress-bar.module.css";
+
 export const ProgressBar = () => {
   const progress = useProgress();
 
   return (
     <div
+      className={styles.progressBar}
       style={{
         width: progress,
-        backgroundColor: "red",
-        position: "sticky",
-        height: "30px",
-        top: 0,
       }}
     ></div>
   );
