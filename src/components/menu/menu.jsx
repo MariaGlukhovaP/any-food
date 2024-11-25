@@ -1,14 +1,18 @@
 import { Dish } from "../dish/dish";
 
+import styles from "../section/section.module.css";
+
 export const Menu = ({ menu }) => {
   return (
-    <div>
-      <h3>Menu</h3>
-      {menu.map(({ id, name, price, ingredients }) => (
-        <ul key={id}>
-          <Dish name={name} price={price} ingredients={ingredients} />
-        </ul>
-      ))}
-    </div>
+    <section>
+      <h3 className={styles.sectionTitle}>Menu</h3>
+      <ul className={styles.sectionContainer}>
+        {menu.map(({ id, name, price, ingredients }) => (
+          <li key={id}>
+            <Dish name={name} price={price} ingredients={ingredients} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
