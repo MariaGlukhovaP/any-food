@@ -3,8 +3,8 @@ import styles from "./card.module.css";
 export const Card = ({
   cardTitle,
   cardFirstRowItem,
-  cardSideItem,
   cardSecondRowItem,
+  cardSideItem,
 }) => {
   return (
     <div className={styles.cardContainer}>
@@ -12,10 +12,10 @@ export const Card = ({
         <h4 className={styles.cardTitle}>{cardTitle}</h4>
         <div className={styles.cardFirstRowItem}>{cardFirstRowItem}</div>
         {cardSecondRowItem && (
-          <p className={styles.cardSecondRowItem}>{cardSecondRowItem}</p>
+          <div className={styles.cardSecondRowItem}>{cardSecondRowItem}</div>
         )}
       </div>
-      {cardSideItem && <p>{cardSideItem}</p>}
+      {cardSideItem && <div>{cardSideItem}</div>}
     </div>
   );
 };

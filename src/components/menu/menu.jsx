@@ -1,15 +1,22 @@
-import { Dish } from "../dish/dish";
+import { Card } from "../card/card";
+import { DishCounter } from "../dish-counter/dish-counter";
+import { Subtitle } from "../subtitle/subtitle";
 
-import styles from "../section/section.module.css";
+import styles from "./../cards-container/cards-container.module.css";
 
 export const Menu = ({ menu }) => {
   return (
     <section>
-      <h3 className={styles.sectionTitle}>Menu</h3>
-      <ul className={styles.sectionContainer}>
+      <Subtitle subtitle="Menu" />
+      <ul className={styles.cardsContainer}>
         {menu.map(({ id, name, price, ingredients }) => (
           <li key={id}>
-            <Dish name={name} price={price} ingredients={ingredients} />
+            <Card
+              cardTitle={name}
+              cardFirstRowItem={ingredients.join(", ")}
+              cardSecondRowItem={`${price}$`}
+              cardSideItem={<DishCounter />}
+            />
           </li>
         ))}
       </ul>

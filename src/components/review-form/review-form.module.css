@@ -3,7 +3,7 @@
 }
 
 .formSectionContainer {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .formItem {
@@ -27,6 +27,14 @@
   width: 50vw;
   border: 1px solid #b4b4b4;
   border-radius: 3px;
+}
+
+.nameInput {
+  height: 25px;
+}
+
+.textarea {
+  height: 100px;
 }
 
 .submitButton {

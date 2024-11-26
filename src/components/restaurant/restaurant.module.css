@@ -1,7 +1,15 @@
 .restaurantContainer {
+  display: flex;
+  flex-direction: column;
   margin: 50px;
 }
 
 .restaurantName {
   margin-bottom: 30px;
+}
+
+.cardsSections {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
 }

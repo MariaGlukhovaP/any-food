@@ -2,6 +2,7 @@ import { Counter } from "../counter/counter";
 import { useForm } from "./use-form";
 
 import styles from "./review-form.module.css";
+import classNames from "classnames";
 
 export const ReviewForm = () => {
   const { form, setName, setText, increase, decrease, clear } = useForm();
@@ -9,7 +10,7 @@ export const ReviewForm = () => {
 
   return (
     <div className={styles.formSectionContainer}>
-      <h3 className={styles.formTitle}>Leave your review</h3>
+      <h4 className={styles.formTitle}>Leave your review</h4>
       <form
         className={styles.formContainer}
         onSubmit={(event) => event.preventDefault()}
@@ -17,7 +18,7 @@ export const ReviewForm = () => {
         <div className={styles.formItem}>
           <span className={styles.inputTitle}>Name</span>
           <input
-            className={styles.formInput}
+            className={classNames(styles.nameInput, styles.formInput)}
             type="text"
             value={name}
             onChange={(event) => setName(event.target.value)}
@@ -27,8 +28,7 @@ export const ReviewForm = () => {
         <div className={styles.formItem}>
           <span className={styles.inputTitle}>Review</span>
           <textarea
-            className={styles.formInput}
-            type="text"
+            className={classNames(styles.textarea, styles.formInput)}
             value={text}
             onChange={(event) => setText(event.target.value)}
           />

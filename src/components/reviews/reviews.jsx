@@ -1,16 +1,21 @@
+import { Card } from "../card/card";
 import { ReviewForm } from "../review-form/review-form";
-import { Review } from "../review/review";
+import { Subtitle } from "../subtitle/subtitle";
 
-import styles from "../section/section.module.css";
+import styles from "./../cards-container/cards-container.module.css";
 
 export const Reviews = ({ reviews }) => {
   return (
     <section>
-      <h3 className={styles.sectionTitle}>Reviews</h3>
-      <ul className={styles.sectionContainer}>
+      <Subtitle subtitle="Reviews" />
+      <ul className={styles.cardsContainer}>
         {reviews.map(({ id, user, text, rating }) => (
           <li key={id}>
-            <Review user={user} text={text} rating={rating} />
+            <Card
+              cardTitle={text}
+              cardFirstRowItem={user}
+              cardSideItem={`${rating} ★`}
+            />
           </li>
         ))}
       </ul>

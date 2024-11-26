@@ -11,6 +11,7 @@
   height: 36px;
   background-color: #e18504;
   border-radius: 1px;
+  border: none;
 }
 
 .counterButton:hover {

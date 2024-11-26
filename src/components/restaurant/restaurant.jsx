@@ -9,8 +9,10 @@ export const Restaurant = ({ id, name, menu, reviews }) => {
   return (
     <section className={styles.restaurantContainer} key={id}>
       <h2 className={styles.restaurantName}>{name}</h2>
-      {menu.length && <Menu menu={menu} />}
-      {reviews.length && <Reviews reviews={reviews} />}
+      <div className={styles.cardsSections}>
+        {menu.length && <Menu menu={menu} />}
+        {reviews.length && <Reviews reviews={reviews} />}
+      </div>
     </section>
   );
 };

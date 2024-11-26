@@ -21,22 +21,5 @@ body {
 }
 
 button {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
   cursor: pointer;
-}
-
-section {
-  margin-bottom: 50px;
-}
-
-textarea {
-  height: 100px;
-}
-
-input {
-  height: 25px;
 }
