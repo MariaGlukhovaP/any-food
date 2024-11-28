@@ -1,5 +1,7 @@
+@import url("./../../global-colors.css");
+
 .progressBar {
-  background-color: #e18504;
+  background-color: var(--primary-color);
   position: fixed;
   height: 30px;
   top: 0;

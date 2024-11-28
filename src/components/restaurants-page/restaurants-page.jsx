@@ -22,7 +22,7 @@ export const RestaurantsPage = () => {
   };
 
   return (
-    <div>
+    <div className={styles.restaurantsPageContainer}>
       <div className={styles.restaurantsTabsContainer}>
         {restaurants.map(({ name, id }) => (
           <Tab

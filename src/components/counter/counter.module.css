@@ -1,9 +1,10 @@
+@import url("./../../global-colors.css");
+
 .counter {
-  color: #f8f8f8;
   font-size: 30px;
   width: 36px;
   height: 36px;
-  background-color: #e18504;
+  background-color: var(--primary-color);
   border-radius: 1px;
   border: none;
 }

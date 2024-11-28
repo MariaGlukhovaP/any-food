@@ -1,3 +1,5 @@
+@import url("./../../global-colors.css");
+
 .formTitle {
   margin-bottom: 10px;
 }
@@ -27,6 +29,7 @@
   width: 50vw;
   border: 1px solid #b4b4b4;
   border-radius: 3px;
+  background-color: var(--light-secondary-color);
 }
 
 .nameInput {
@@ -38,10 +41,9 @@
 }
 
 .submit {
-  background-color: transparent;
-  border: 2px solid #e18504;
-  color: #e18504;
+  border: none;
   text-transform: uppercase;
+  background-color: var(--primary-color);
   font-weight: 600;
   padding: 10px 20px;
   border-radius: 5px;
@@ -51,9 +53,4 @@
 
 .submit:hover {
   transform: scale(1.05);
-}
-
-.submit:active {
-  color: #f8f8f8;
-  background-color: #e18504;
 }

@@ -4,11 +4,11 @@ import { Button } from "../button/button";
 import styles from "./log-in-out.module.css";
 
 export const LogInOut = () => {
-  const { user, setUser, isAuthed } = useAuth();
+  const { user, setUser, isAuth } = useAuth();
 
   return (
     <div>
-      {!isAuthed(user) && (
+      {!isAuth && (
         <Button
           text="Log In"
           buttonType={styles.logInButton}
@@ -16,7 +16,7 @@ export const LogInOut = () => {
         />
       )}
 
-      {isAuthed(user) && (
+      {isAuth && (
         <div className={styles.logOutContainer}>
           <span>{user}</span>
           <Button

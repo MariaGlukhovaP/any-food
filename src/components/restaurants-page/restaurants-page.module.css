@@ -1,7 +1,13 @@
+@import url("./../../global-colors.css");
+
+.restaurantsPageContainer {
+  background-color: var(--light-secondary-color);
+}
+
 .restaurantsTabsContainer {
   height: 50px;
-  background-color: #e18504;
-  color: #f8f8f8;
+  background-color: var(--primary-color);
+  color: var(--light-secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;

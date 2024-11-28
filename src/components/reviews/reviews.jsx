@@ -6,7 +6,7 @@ import { Subtitle } from "../subtitle/subtitle";
 import styles from "./../cards-container/cards-container.module.css";
 
 export const Reviews = ({ reviews }) => {
-  const { isAuthed, user } = useAuth();
+  const { isAuth } = useAuth();
 
   return (
     <section>
@@ -22,7 +22,7 @@ export const Reviews = ({ reviews }) => {
           </li>
         ))}
       </ul>
-      {isAuthed(user) && <ReviewForm />}
+      {isAuth && <ReviewForm />}
     </section>
   );
 };
