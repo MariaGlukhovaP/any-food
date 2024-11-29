@@ -1,0 +1,17 @@
+@import url("./../../global-colors.css");
+
+.button {
+  cursor: pointer;
+}
+
+.button.active {
+  opacity: 1;
+}
+
+.button.light {
+  color: var(--light-secondary-color);
+}
+
+.button.dark {
+  color: var(--dark-secondary-color);
+}

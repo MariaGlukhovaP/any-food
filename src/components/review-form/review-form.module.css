@@ -1,5 +1,7 @@
+@import url("./../../global-colors.css");
+
 .formTitle {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .formSectionContainer {
@@ -27,6 +29,7 @@
   width: 50vw;
   border: 1px solid #b4b4b4;
   border-radius: 3px;
+  background-color: var(--light-secondary-color);
 }
 
 .nameInput {
@@ -37,11 +40,10 @@
   height: 100px;
 }
 
-.submitButton {
-  background-color: transparent;
-  border: 2px solid #e18504;
-  color: #e18504;
+.submit {
+  border: none;
   text-transform: uppercase;
+  background-color: var(--primary-color);
   font-weight: 600;
   padding: 10px 20px;
   border-radius: 5px;
@@ -49,11 +51,6 @@
   transition: transform 0.3s;
 }
 
-.submitButton:hover {
+.submit:hover {
   transform: scale(1.05);
-}
-
-.submitButton:active {
-  color: #f8f8f8;
-  background-color: #e18504;
 }

@@ -1,0 +1,9 @@
+@import url("./../../global-colors.css");
+
+.switchTheme {
+  border-radius: 3px;
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  border: 0;
+  font-weight: 600;
+}

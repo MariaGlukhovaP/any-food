@@ -1,0 +1,34 @@
+@import url("./../../global-colors.css");
+
+.descriptionContainer {
+  width: 100%;
+  position: relative;
+  min-height: 300px;
+  background-color: var(--dark-secondary-color);
+}
+
+.descriptionText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-secondary-color);
+}
+
+.backgroundImg {
+  background-image: url("/img/header-img.jpeg");
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

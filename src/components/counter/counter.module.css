@@ -1,19 +1,20 @@
-.counterContainer {
-  display: flex;
-  column-gap: 10px;
-  align-items: center;
-}
+@import url("./../../global-colors.css");
 
-.counterButton {
-  color: #f8f8f8;
+.counter {
   font-size: 30px;
   width: 36px;
   height: 36px;
-  background-color: #e18504;
+  background-color: var(--primary-color);
   border-radius: 1px;
   border: none;
 }
 
-.counterButton:hover {
+.counter:hover {
   opacity: 0.8;
+}
+
+.counterContainer {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
 }
