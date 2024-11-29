@@ -36,7 +36,7 @@ export const RestaurantsPage = () => {
 
       {selectedRestaurant && (
         <Restaurant
-          id={selectedRestaurant.id}
+          key={selectedRestaurant.id}
           name={selectedRestaurant.name}
           menu={selectedRestaurant.menu}
           reviews={selectedRestaurant.reviews}

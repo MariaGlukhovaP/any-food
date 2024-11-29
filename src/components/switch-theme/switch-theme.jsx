@@ -4,19 +4,11 @@ import { useTheme } from "../theme-context/use-theme";
 import styles from "./switch-theme.module.css";
 
 export const SwitchTheme = () => {
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <Button
-      text="Toggle Theme"
+      text={theme === "light" ? "Switch to dark" : "Switch to light"}
       buttonType={styles.switchTheme}
       onClick={toggleTheme}
     />

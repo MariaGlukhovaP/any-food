@@ -6,7 +6,7 @@ import { Subtitle } from "../subtitle/subtitle";
 import styles from "./../cards-container/cards-container.module.css";
 
 export const Menu = ({ menu }) => {
-  const { isAuth } = useAuth();
+  const { auth } = useAuth();
 
   return (
     <section>
@@ -18,7 +18,7 @@ export const Menu = ({ menu }) => {
               cardTitle={name}
               cardFirstRowItem={ingredients.join(", ")}
               cardSecondRowItem={`${price}$`}
-              cardSideItem={isAuth && <DishCounter />}
+              cardSideItem={auth.isAuthorized && <DishCounter />}
             />
           </li>
         ))}

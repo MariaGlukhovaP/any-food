@@ -1,6 +1,6 @@
 @import url("./../../global-colors.css");
 
-.logInButton {
+.logInOutButton {
   border-radius: 3px;
   padding: 5px 10px;
   background-color: var(--primary-color);
