@@ -1,7 +1,7 @@
 .restaurantContainer {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  padding: 50px;
 }
 
 .restaurantName {
