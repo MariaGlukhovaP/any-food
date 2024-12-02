@@ -1,4 +1,4 @@
-import { Card } from "../card/card";
+import { ReviewContainer } from "../review/review-container";
 import { Subtitle } from "../subtitle/subtitle";
 
 import styles from "./../cards-container/cards-container.module.css";
@@ -8,13 +8,9 @@ export const Reviews = ({ reviews }) => {
     <section>
       <Subtitle subtitle="Reviews" />
       <ul className={styles.cardsContainer}>
-        {reviews.map(({ id, user, text, rating }) => (
-          <li key={id}>
-            <Card
-              cardTitle={text}
-              cardFirstRowItem={user}
-              cardSideItem={`${rating} ★`}
-            />
+        {reviews.map((reviewId) => (
+          <li key={reviewId}>
+            <ReviewContainer id={reviewId} />
           </li>
         ))}
       </ul>

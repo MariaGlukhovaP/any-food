@@ -1,46 +1,40 @@
 import { useState } from "react";
-import { restaurants } from "../../constants/mock";
-import { Restaurant } from "../restaurant/restaurant";
-import { Tab } from "../tab/tab";
-
+import { useSelector } from "react-redux";
+import { selectRestaurantsIds } from "../../redux/entities/restaurants/restaurants-slice";
+import { RestaurantTabContainer } from "../restaurant-tab/restaurant-tab-container";
+import { RestaurantContainer } from "../restaurant/restaurant-container";
 import styles from "./restaurants-page.module.css";
 
 export const RestaurantsPage = () => {
-  const [selectedRestaurantId, setSelectedRestaurantId] = useState(
-    restaurants[0].id
+  const restaurantsIds = useSelector(selectRestaurantsIds);
+
+  const [activeRestaurantId, setActiveRestaurantId] = useState(
+    restaurantsIds[0]
   );
 
-  const selectedRestaurant = restaurants.find(
-    ({ id }) => id === selectedRestaurantId
-  );
-
-  const handleSetSelectedRestaurant = (id) => {
-    if (selectedRestaurantId === id) {
+  const handleSetActiveRestaurantId = (id) => {
+    if (activeRestaurantId === id) {
       return;
     }
-    setSelectedRestaurantId(id);
+
+    setActiveRestaurantId(id);
   };
 
   return (
     <div className={styles.restaurantsPageContainer}>
       <div className={styles.restaurantsTabsContainer}>
-        {restaurants.map(({ name, id }) => (
-          <Tab
+        {restaurantsIds.map((id) => (
+          <RestaurantTabContainer
             key={id}
-            title={name}
-            onClick={() => handleSetSelectedRestaurant(id)}
-            isActive={id === selectedRestaurantId}
+            id={id}
+            onClick={() => handleSetActiveRestaurantId(id)}
+            isActive={id === activeRestaurantId}
           />
         ))}
       </div>
 
-      {selectedRestaurant && (
-        <Restaurant
-          key={selectedRestaurant.id}
-          name={selectedRestaurant.name}
-          menu={selectedRestaurant.menu}
-          reviews={selectedRestaurant.reviews}
-        />
+      {activeRestaurantId && (
+        <RestaurantContainer key={activeRestaurantId} id={activeRestaurantId} />
       )}
     </div>
   );
