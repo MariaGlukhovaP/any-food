@@ -1,14 +1,12 @@
-import { useSelector } from "react-redux";
 import { Card } from "../card/card";
-import { selectUserById } from "../../redux/entities/users/users-slice";
+
+import { UserContainer } from "../user/user-container";
 
 export const Review = ({ userId, text, rating }) => {
-  const user = useSelector((state) => selectUserById(state, userId));
-
   return (
     <Card
       cardTitle={text}
-      cardFirstRowItem={user.name}
+      cardFirstRowItem={<UserContainer id={userId} />}
       cardSideItem={`${rating} ★`}
     />
   );

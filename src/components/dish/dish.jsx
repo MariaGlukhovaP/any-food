@@ -8,7 +8,7 @@ export const Dish = ({ name, ingredients, price }) => {
   return (
     <Card
       cardTitle={name}
-      cardFirstRowItem={ingredients}
+      cardFirstRowItem={ingredients.join(", ")}
       cardSecondRowItem={`${price}$`}
       cardSideItem={auth.isAuthorized && <DishCounter />}
     />
