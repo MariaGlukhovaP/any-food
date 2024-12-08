@@ -1,15 +1,19 @@
-import { Description } from "../description/description";
+import { Outlet } from "react-router-dom";
+import { Cart } from "../cart/cart";
 import { Footer } from "../footer/footer";
 import { Header } from "../header/header";
-import { ProgressBar } from "../progress-bar/progress-bar";
+import { useAuth } from "../auth-context/use-auth";
 
-export const Layout = ({ children }) => {
+export const Layout = () => {
+  const { auth } = useAuth();
+
+  const { isAuthorized } = auth;
+
   return (
     <div>
-      <ProgressBar />
       <Header />
-      <Description />
-      {children}
+      <Outlet />
+      {isAuthorized && <Cart />}
       <Footer />
     </div>
   );
