@@ -13,22 +13,31 @@ import { ReviewsPage } from "./components/reviews-page/reviews-page";
 import { DishPage } from "./components/dish-page/dish-page";
 
 const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
   {
-    path: "/restaurants",
-    element: <RestaurantsPage />,
+    path: "/",
+    element: <Layout />,
     children: [
       {
-        path: "restaurant/:restaurantId",
-        element: <RestaurantPage />,
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "/restaurants",
+        element: <RestaurantsPage />,
         children: [
           {
-            path: "menu",
-            element: <MenuPage />,
-          },
-          {
-            path: "reviews",
-            element: <ReviewsPage />,
+            path: "restaurant/:restaurantId",
+            element: <RestaurantPage />,
+            children: [
+              {
+                path: "menu",
+                element: <MenuPage />,
+              },
+              {
+                path: "reviews",
+                element: <ReviewsPage />,
+              },
+            ],
           },
         ],
       },
@@ -42,9 +51,7 @@ export const App = () => {
     <Provider store={store}>
       <AuthContextProvider>
         <ThemeContextProvider>
-          <Layout>
-            <RouterProvider router={router} />
-          </Layout>
+          <RouterProvider router={router} />
         </ThemeContextProvider>
       </AuthContextProvider>
     </Provider>
