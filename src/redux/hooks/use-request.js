@@ -6,14 +6,13 @@ export const useRequest = (thunk, ...params) => {
   const [request, setRequest] = useState();
   const dispatch = useDispatch();
 
-  const requestStatus = useSelector((state) => {
-    selectRequestStatusById(state, request?.requestId);
-  });
+  const requestStatus = useSelector((state) =>
+    selectRequestStatusById(state, request?.requestId)
+  );
 
   useEffect(() => {
     const request = dispatch(thunk(...params));
     setRequest(request);
-
     return () => {
       request.abort();
       setRequest(null);
