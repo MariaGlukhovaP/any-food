@@ -5,9 +5,9 @@ import styles from "./review-form.module.css";
 import classNames from "classnames";
 import { Button } from "../button/button";
 
-export const ReviewForm = () => {
-  const { form, setName, setText, increase, decrease, clear } = useForm();
-  const { name, text, rating } = form;
+export const ReviewForm = ({ onAddReview, userId }) => {
+  const { form, setText, increase, decrease, clear } = useForm();
+  const { text, rating } = form;
 
   return (
     <div className={styles.formSectionContainer}>
@@ -16,16 +16,6 @@ export const ReviewForm = () => {
         className={styles.formContainer}
         onSubmit={(event) => event.preventDefault()}
       >
-        <div className={styles.formItem}>
-          <span className={styles.inputTitle}>Name</span>
-          <input
-            className={classNames(styles.nameInput, styles.formInput)}
-            type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </div>
-
         <div className={styles.formItem}>
           <span className={styles.inputTitle}>Review</span>
           <textarea
@@ -40,7 +30,12 @@ export const ReviewForm = () => {
           <Counter value={rating} increase={increase} decrease={decrease} />
         </div>
 
-        <Button text="Submit" buttonType={styles.submit} onClick={clear} />
+        <Button
+          text="Submit"
+          buttonType={styles.submit}
+          onClick={() => onAddReview({ text, rating, userId })}
+        />
+        <Button text="Clear" buttonType={styles.submit} onClick={clear} />
       </form>
     </div>
   );
