@@ -1,28 +1,32 @@
-import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
 import { Reviews } from "./reviews";
-import { useRequest } from "../../redux/hooks/use-request";
-import { getReviews } from "../../redux/entities/reviews/get-reviews";
-import { getUsers } from "../../redux/entities/users/get-users";
-import { PENDING } from "../../redux/UI/request/request-statuses";
+import {
+  useAddReviewMutation,
+  useGetReviewsByRestaurantIdQuery,
+  useGetUsersQuery,
+} from "../../redux/services/api";
+import { useCallback } from "react";
 
 export const ReviewsContainer = ({ restaurantId }) => {
-  const reviewsRequestStatus = useRequest(getReviews, restaurantId);
-  const usersRequestStatus = useRequest(getUsers);
+  const { data: reviews, isFetching: isGetReviewsFetching } =
+    useGetReviewsByRestaurantIdQuery(restaurantId);
+  useGetUsersQuery();
 
-  const restaurant = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
+  const [addReview, { isLoading: isAddReviewLoading }] = useAddReviewMutation();
+
+  const handleAddReview = useCallback(
+    (review) => {
+      addReview({ restaurantId, review });
+    },
+    [addReview, restaurantId]
   );
 
-  if (reviewsRequestStatus === PENDING || usersRequestStatus === PENDING) {
+  if (isGetReviewsFetching || isAddReviewLoading) {
     return "...loading";
   }
 
-  if (!restaurant) {
+  if (!reviews) {
     return null;
   }
 
-  const { reviews } = restaurant;
-
-  return <Reviews reviews={reviews} />;
+  return <Reviews reviews={reviews} onAddReview={handleAddReview} />;
 };

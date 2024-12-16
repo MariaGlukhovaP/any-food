@@ -1,13 +1,17 @@
-import { useSelector } from "react-redux";
-import { selectDishById } from "../../redux/entities/dishes/dishes-slice";
 import { Dish } from "./dish";
+import { useGetDishesByRestaurantIdQuery } from "../../redux/services/api";
 
 export const DishContainer = ({ dishId }) => {
-  const dish = useSelector((state) => selectDishById(state, dishId));
+  const { data } = useGetDishesByRestaurantIdQuery(undefined, {
+    selectFromResult: (result) => ({
+      ...result,
+      data: result?.data?.find(({ id }) => id === dishId),
+    }),
+  });
 
-  if (!dish) return null;
+  if (!data) return null;
 
-  const { name, ingredients, price } = dish;
+  const { name, ingredients, price } = data;
 
   return (
     <Dish name={name} ingredients={ingredients} price={price} dishId={dishId} />

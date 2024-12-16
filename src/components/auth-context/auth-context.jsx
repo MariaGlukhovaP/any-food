@@ -8,7 +8,11 @@ export const AuthContextProvider = ({ children }) => {
     setAuth((prev) =>
       prev.isAuthorized
         ? { isAuthorized: false }
-        : { isAuthorized: true, name: "User" }
+        : {
+            isAuthorized: true,
+            name: "Antony",
+            id: "a304959a-76c0-4b34-954a-b38dbf310360",
+          }
     );
   };
 

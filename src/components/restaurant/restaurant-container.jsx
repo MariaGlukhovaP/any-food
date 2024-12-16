@@ -1,24 +1,15 @@
-import { useSelector } from "react-redux";
+import { useGetRestaurantsQuery } from "../../redux/services/api";
 import { Restaurant } from "./restaurant";
-import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
-import { useRequest } from "../../redux/hooks/use-request";
-import { getRestaurantById } from "../../redux/entities/restaurants/get-restaurant-by-id";
-import { PENDING } from "../../redux/UI/request/request-statuses";
 
 export const RestaurantContainer = ({ restaurantId }) => {
-  const restaurantRequestStatus = useRequest(getRestaurantById, restaurantId);
-
-  const restaurant = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
-  );
-
-  if (restaurantRequestStatus === PENDING) {
-    return "...loading";
-  }
+  const { data: restaurant } = useGetRestaurantsQuery(undefined, {
+    selectFromResult: (result) => ({
+      ...result,
+      data: result?.data?.find(({ id }) => id === restaurantId),
+    }),
+  });
 
   if (!restaurant) return null;
 
-  const { name } = restaurant;
-
-  return <Restaurant name={name} />;
+  return <Restaurant name={restaurant.name} />;
 };

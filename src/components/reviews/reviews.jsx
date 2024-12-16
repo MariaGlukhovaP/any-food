@@ -1,22 +1,24 @@
 import { useAuth } from "../auth-context/use-auth";
 import { ReviewForm } from "../review-form/review-form";
-import { ReviewContainer } from "../review/review-container";
+import { Review } from "../review/review";
 
 import styles from "./../cards-container/cards-container.module.css";
 
-export const Reviews = ({ reviews }) => {
+export const Reviews = ({ reviews, onAddReview }) => {
   const { auth } = useAuth();
+
+  const { isAuthorized, id } = auth;
 
   return (
     <section className={styles.cardsSectionContainer}>
       <ul className={styles.cardsContainer}>
-        {reviews?.map((reviewId) => (
-          <li key={reviewId}>
-            <ReviewContainer reviewId={reviewId} />
+        {reviews.map(({ text, userId, id, rating }) => (
+          <li key={id}>
+            <Review userId={userId} text={text} rating={rating} />
           </li>
         ))}
       </ul>
-      {auth.isAuthorized && <ReviewForm />}
+      {isAuthorized && <ReviewForm onAddReview={onAddReview} userId={id} />}
     </section>
   );
 };
