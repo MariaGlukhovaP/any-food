@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { Description } from "../../components/description/description";
+import { TabLink } from "../../components/tab-link/tab-link";
 import styles from "./home-page.module.css";
 
 export const HomePage = () => {
@@ -7,9 +7,7 @@ export const HomePage = () => {
     <div className={styles.homePage}>
       <Description />
       <div className={styles.linkContainer}>
-        <Link to="/restaurants" className={styles.link}>
-          Restaurants
-        </Link>
+        <TabLink href="/restaurants" title="Restaurants" />
       </div>
     </div>
   );

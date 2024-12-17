@@ -1,11 +1,5 @@
-import { Link } from "react-router-dom";
-
-import styles from "./dish-tab.module.css";
+import { TabLink } from "../tab-link/tab-link";
 
 export const DishTab = ({ dishId, name }) => {
-  return (
-    <Link className={styles.link} to={`/dish/${dishId}`}>
-      {name}
-    </Link>
-  );
+  return <TabLink href={`/dish/${dishId}`} title={name} />;
 };

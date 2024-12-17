@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
 import { ReviewsContainer } from "../../components/reviews/reviews-container";
 
-export const ReviewsPage = () => {
-  const { restaurantId } = useParams();
+export const ReviewsPage = async ({ params }) => {
+  const { restaurantId } = await params;
 
   return (
     <div>

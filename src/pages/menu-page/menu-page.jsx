@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
 import { MenuContainer } from "../../components/menu/menu-container";
 
-export const MenuPage = () => {
-  const { restaurantId } = useParams();
+export const MenuPage = async ({ params }) => {
+  const { restaurantId } = await params;
 
   return (
     <div>

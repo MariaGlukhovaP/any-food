@@ -1,3 +1,5 @@
+"use client";
+
 import { useGetRestaurantsQuery } from "../../redux/services/api";
 import { Restaurant } from "./restaurant";
 
@@ -11,5 +13,5 @@ export const RestaurantContainer = ({ restaurantId }) => {
 
   if (!restaurant) return null;
 
-  return <Restaurant name={restaurant.name} />;
+  return <Restaurant name={restaurant.name} id={restaurantId} />;
 };
