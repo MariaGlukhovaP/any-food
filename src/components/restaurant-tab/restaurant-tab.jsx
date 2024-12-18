@@ -1,17 +1,5 @@
-import { NavLink } from "react-router-dom";
-import classNames from "classnames";
-
-import styles from "./restaurant-tab.module.css";
+import { TabLink } from "../tab-link/tab-link";
 
 export const RestaurantTab = ({ id, title }) => {
-  return (
-    <NavLink
-      to={id}
-      className={({ isActive }) =>
-        classNames(styles.link, isActive && styles.activeLink)
-      }
-    >
-      {title}
-    </NavLink>
-  );
+  return <TabLink href={`/restaurants/${id}`} title={title} />;
 };

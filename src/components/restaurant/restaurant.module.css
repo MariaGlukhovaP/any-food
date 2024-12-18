@@ -1,5 +1,3 @@
-@import url("./../../global-colors.css");
-
 .restaurantContainer {
   display: flex;
   flex-direction: column;
@@ -14,14 +12,4 @@
   display: flex;
   flex-direction: row;
   column-gap: 20px;
-}
-
-.link {
-  text-decoration: none;
-  color: var(--dark-secondary-color);
-  opacity: 0.8;
-}
-
-.activeLink {
-  opacity: 1;
 }
