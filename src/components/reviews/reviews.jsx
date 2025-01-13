@@ -1,3 +1,5 @@
+"use client";
+
 import { useAuth } from "../auth-context/use-auth";
 import { ReviewForm } from "../review-form/review-form";
 import { Review } from "../review/review";

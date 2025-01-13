@@ -1,3 +1,5 @@
+"use client";
+
 import { useAuth } from "../auth-context/use-auth";
 import { Card } from "../card/card";
 import { DishCounter } from "../dish-counter/dish-counter";

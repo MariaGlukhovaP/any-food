@@ -1,5 +1,3 @@
-"use client";
-
 import { Reviews } from "../../reviews/reviews";
 
 export const ReviewsPage = ({ reviews, restaurantId }) => {
