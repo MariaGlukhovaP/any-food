@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <SwitchTheme />
-      <h1 className={styles.title}>Food Delivery App</h1>
+      <h1 className={styles.title}>Food Delivery</h1>
       <LogInOut />
     </header>
   );

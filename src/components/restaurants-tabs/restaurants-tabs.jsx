@@ -1,12 +1,18 @@
+import { CardsContainer } from "../cards-container/cards-container";
 import { RestaurantTab } from "../restaurant-tab/restaurant-tab";
-import styles from "./restaurants-tabs.module.css";
 
 export const RestaurantsTabs = ({ restaurants }) => {
   return (
-    <div className={styles.restaurantsTabsContainer}>
-      {restaurants.map(({ id, name }) => (
-        <RestaurantTab title={name} id={id} key={id} />
+    <CardsContainer>
+      {restaurants.map(({ id, name, img, description }) => (
+        <RestaurantTab
+          title={name}
+          id={id}
+          key={id}
+          img={img}
+          description={description}
+        />
       ))}
-    </div>
+    </CardsContainer>
   );
 };

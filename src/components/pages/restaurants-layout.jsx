@@ -1,10 +1,10 @@
 import { PageContainer } from "../page-container/page-container";
-import { RestaurantsTabsContainer } from "../restaurants-tabs/restaurants-tabs-container";
+import { TabLinks } from "../tab-links/tab-links";
 
 export const RestaurantsLayout = ({ children }) => {
   return (
     <PageContainer>
-      <RestaurantsTabsContainer />
+      <TabLinks />
       {children}
     </PageContainer>
   );

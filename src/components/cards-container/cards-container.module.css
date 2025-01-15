@@ -1,9 +1,6 @@
 .cardsContainer {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
-}
-
-.cardsSectionContainer {
-  padding: 0 50px 50px 50px;
+  row-gap: 20px;
+  padding: 50px 200px;
 }
