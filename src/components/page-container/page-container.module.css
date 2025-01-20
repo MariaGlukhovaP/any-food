@@ -1,3 +1,11 @@
 .page {
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 70px - 70px - 250px - 50px - 100px);
+  overflow: hidden;
+  margin: 50px 30px;
+}
+
+@media (min-width: 992px) {
+  .page {
+    margin: 50px 200px;
+  }
 }

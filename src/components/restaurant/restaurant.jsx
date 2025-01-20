@@ -1,14 +1,11 @@
-import { TabLink } from "../tab-link/tab-link";
-import styles from "./restaurant.module.css";
+import { TabLink } from "./../tab-link/tab-link";
+import { LinksContainer } from "../links-container/links-container";
 
-export const Restaurant = ({ name, id }) => {
+export const Restaurant = ({ id }) => {
   return (
-    <section className={styles.restaurantContainer}>
-      <h2 className={styles.restaurantName}>{name}</h2>
-      <div className={styles.reataurantTabs}>
-        <TabLink href={`/restaurants/${id}/menu`} title="Menu" />
-        <TabLink href={`/restaurants/${id}/reviews`} title="Reviews" />
-      </div>
-    </section>
+    <LinksContainer>
+      <TabLink title="Menu" href={`/restaurants/${id}/menu`} />
+      <TabLink title="Reviews" href={`/restaurants/${id}/reviews`} />
+    </LinksContainer>
   );
 };

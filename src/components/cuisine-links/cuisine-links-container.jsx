@@ -1,12 +1,12 @@
 import { getRestaurants } from "../../services/get-restaurants";
-import { TabLinks } from "./tab-links";
+import { CuisineLinks } from "./cuisine-links";
 
-export const TabLinksContainer = async () => {
+export const СuisineLinksContainer = async () => {
   const restaurants = await getRestaurants();
 
   if (!restaurants.length) {
     return null;
   }
 
-  return <TabLinks restaurants={restaurants} />;
+  return <CuisineLinks restaurants={restaurants} />;
 };

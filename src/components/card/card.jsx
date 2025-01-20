@@ -10,7 +10,11 @@ export const Card = ({
 }) => {
   return (
     <div className={styles.cardContainer}>
-      {cardImg && <img className={styles.cardImg} src={cardImg} alt={alt} />}
+      {cardImg && (
+        <div className={styles.imgContainer}>
+          <img className={styles.cardImg} src={cardImg} alt={alt} />
+        </div>
+      )}
       <div>
         <h4 className={styles.cardTitle}>{cardTitle}</h4>
         <div className={styles.cardFirstRowItem}>{cardFirstRowItem}</div>

@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
 import { RestaurantTab } from "./restaurant-tab";
+import { getRestaurant } from "../../services/get-restaurant-by-id";
 
-export const RestaurantTabContainer = ({ id }) => {
-  const restaurant = useSelector((state) => selectRestaurantById(state, id));
+export const RestaurantTabContainer = async ({ id }) => {
+  const restaurant = await getRestaurant(id);
 
   if (!restaurant) {
     return null;

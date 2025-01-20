@@ -4,14 +4,14 @@
 }
 
 .cart {
-  background-color: bisque;
-  margin: 0 50px 50px 50px;
-  padding: 20px 50px;
+  background-color: #ffbe1a65;
+  padding: 10px 20px;
   border-radius: 1px;
+  min-width: 400px;
 }
 
 .cartItems {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  row-gap: 5px;
 }

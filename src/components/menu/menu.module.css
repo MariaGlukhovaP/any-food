@@ -1,0 +1,13 @@
+.menuContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .menuContainer {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+}

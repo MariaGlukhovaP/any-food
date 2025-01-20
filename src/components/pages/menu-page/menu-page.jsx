@@ -1,9 +1,10 @@
 import { Menu } from "../../menu/menu";
+import { PageContainer } from "./../../page-container/page-container";
 
 export const MenuPage = async ({ menu }) => {
   return (
-    <div>
+    <PageContainer>
       <Menu menu={menu} />
-    </div>
+    </PageContainer>
   );
 };

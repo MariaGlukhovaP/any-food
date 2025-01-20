@@ -1,5 +1,5 @@
 .headerContainer {
-  color: #e18504;
+  color: #ffbe1a;
   background-color: #2a2a2a;
   display: flex;
   align-items: center;
@@ -7,9 +7,4 @@
   flex-direction: row;
   position: relative;
   height: 70px;
-}
-
-.title {
-  font-weight: 900;
-  text-align: center;
 }

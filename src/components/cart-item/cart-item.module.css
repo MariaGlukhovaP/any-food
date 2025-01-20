@@ -1,14 +1,21 @@
-.price {
-  font-size: larger;
-  justify-self: center;
-}
-
 .cartItem {
-  display: grid;
-  grid-template-columns: 80% 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  margin: 10px;
+  justify-content: space-between;
   padding: 10px;
   background-color: white;
   border-radius: 1px;
+}
+
+.dishInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.price {
+  width: 30px;
+  text-align: end;
 }

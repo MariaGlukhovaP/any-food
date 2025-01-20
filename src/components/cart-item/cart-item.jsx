@@ -7,9 +7,11 @@ export const CartItem = ({ dish }) => {
 
   return (
     <div className={styles.cartItem}>
-      <p>{name}</p>
-      <DishCounter dishId={id} />
-      <p className={styles.price}>{`${price}$`}</p>
+      <div>{name}</div>
+      <div className={styles.dishInfo}>
+        <DishCounter dishId={id} />
+        <p className={styles.price}>{`${price}$`}</p>
+      </div>
     </div>
   );
 };

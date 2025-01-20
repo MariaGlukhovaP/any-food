@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { TabLink } from "../tab-link/tab-link";
+import { ButtonLink } from "../button-link/button-link";
 import { RestaurantsTabs } from "../restaurants-tabs/restaurants-tabs";
+import { LinksContainer } from "../links-container/links-container";
+import { PageContainer } from "../page-container/page-container";
 
-import styles from "./tab-links.module.css";
-
-export const TabLinks = ({ restaurants }) => {
+export const CuisineLinks = ({ restaurants }) => {
   const [selectedDescription, setSelectedDescription] = useState("Все");
 
   const matchingRestaurants =
@@ -15,8 +15,6 @@ export const TabLinks = ({ restaurants }) => {
       : restaurants.filter(
           ({ description }) => description === selectedDescription
         );
-
-  console.log(matchingRestaurants);
 
   const handleSetSelectedDescription = (description) => {
     if (selectedDescription === description) {
@@ -27,23 +25,25 @@ export const TabLinks = ({ restaurants }) => {
 
   return (
     <>
-      <div className={styles.tabLinks}>
-        <TabLink
+      <LinksContainer>
+        <ButtonLink
           title="Все"
           key="all"
           onClick={() => handleSetSelectedDescription("Все")}
           isActive={selectedDescription === "Все"}
         />
         {restaurants.map(({ id, description }) => (
-          <TabLink
+          <ButtonLink
             title={description}
             key={id}
             onClick={() => handleSetSelectedDescription(description)}
             isActive={description === selectedDescription}
           />
         ))}
-      </div>
-      <RestaurantsTabs restaurants={matchingRestaurants} />
+      </LinksContainer>
+      <PageContainer>
+        <RestaurantsTabs restaurants={matchingRestaurants} />
+      </PageContainer>
     </>
   );
 };

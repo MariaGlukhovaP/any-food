@@ -1,9 +1,11 @@
-.tabLinks {
-  width: 100%;
+.linksContainer {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e18504;
+  background-color: #ffbe1a;
   column-gap: 30px;
 }

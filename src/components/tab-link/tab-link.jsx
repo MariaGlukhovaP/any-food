@@ -1,17 +1,22 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import classNames from "classnames";
+
 import styles from "./tab-link.module.css";
 
-export const TabLink = ({ title, onClick, isActive }) => {
+export const TabLink = ({ href, title }) => {
+  const pathname = usePathname();
+
   return (
-    <button
+    <Link
+      href={href}
       className={classNames(styles.link, {
-        [styles.activeLink]: isActive,
+        [styles.activeLink]: href === pathname,
       })}
-      onClick={onClick}
     >
       {title}
-    </button>
+    </Link>
   );
 };

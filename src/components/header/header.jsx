@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <SwitchTheme />
-      <h1 className={styles.title}>Food Delivery</h1>
+      <img src="https://course-react.javascript.ru/static/media/logo.fca2e89e.svg" />
       <LogInOut />
     </header>
   );
