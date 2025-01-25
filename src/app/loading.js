@@ -1,3 +1,3 @@
-export default function HomePageLoading() {
-  return <div>HomePage Loading...</div>;
-}
+import { Loader } from "../components/loader/loader";
+
+export default Loader;

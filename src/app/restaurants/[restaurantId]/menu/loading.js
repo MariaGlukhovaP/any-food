@@ -1,3 +1,3 @@
-export default function MenuLoading() {
-  return <div>Menu Loading...</div>;
-}
+import Loader from "../loading";
+
+export default Loader;

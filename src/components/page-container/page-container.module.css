@@ -1,6 +1,5 @@
 .page {
   min-height: calc(100vh - 70px - 70px - 250px - 50px - 100px);
-  overflow: hidden;
   margin: 50px 30px;
 }
 

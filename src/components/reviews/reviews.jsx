@@ -1,16 +1,9 @@
-"use client";
-
-import { useAuth } from "../auth-context/use-auth";
 import { ReviewForm } from "../review-form/review-form";
 import { Review } from "../review/review";
 
 import styles from "./../cards-container/cards-container.module.css";
 
 export const Reviews = ({ reviews, restaurantId }) => {
-  const { auth } = useAuth();
-
-  const { isAuthorized, id } = auth;
-
   return (
     <section className={styles.cardsSectionContainer}>
       <ul className={styles.cardsContainer}>
@@ -20,7 +13,10 @@ export const Reviews = ({ reviews, restaurantId }) => {
           </li>
         ))}
       </ul>
-      {isAuthorized && <ReviewForm userId={id} restaurantId={restaurantId} />}
+      <ReviewForm
+        restaurantId={restaurantId}
+        userId="a304959a-76c0-4b34-954a-b38dbf310360"
+      />
     </section>
   );
 };

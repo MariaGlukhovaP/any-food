@@ -1,3 +1,3 @@
-export default function ReviewsLoading() {
-  return <div>Reviews Loading...</div>;
-}
+import Loader from "../loading";
+
+export default Loader;

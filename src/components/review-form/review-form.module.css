@@ -53,6 +53,18 @@
   transform: scale(1.05);
 }
 
+.clear {
+  border: 2px solid #ffbe1a;
+  color: #ffbe1a !important;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: transform 0.3s;
+}
+
 .buttonsContainer {
   display: flex;
   flex-direction: row;

@@ -1,5 +1,10 @@
+import { PageContainer } from "../../page-container/page-container";
 import { Reviews } from "../../reviews/reviews";
 
 export const ReviewsPage = ({ reviews, restaurantId }) => {
-  return <Reviews restaurantId={restaurantId} reviews={reviews} />;
+  return (
+    <PageContainer>
+      <Reviews restaurantId={restaurantId} reviews={reviews} />
+    </PageContainer>
+  );
 };

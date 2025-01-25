@@ -1,7 +1,7 @@
 import { Menu } from "../../menu/menu";
 import { PageContainer } from "./../../page-container/page-container";
 
-export const MenuPage = async ({ menu }) => {
+export const MenuPage = ({ menu }) => {
   return (
     <PageContainer>
       <Menu menu={menu} />

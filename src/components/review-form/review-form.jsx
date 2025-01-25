@@ -1,3 +1,5 @@
+"use client";
+
 import { Counter } from "../counter/counter";
 import { useForm } from "./use-form";
 import classNames from "classnames";
@@ -31,12 +33,14 @@ export const ReviewForm = ({ userId, restaurantId }) => {
           <Counter value={rating} increase={increase} decrease={decrease} />
         </div>
 
-        <Button
-          text="Submit"
-          buttonType={styles.submit}
-          onClick={() => addReview(restaurantId, { text, rating, userId })}
-        />
-        <Button text="Clear" buttonType={styles.submit} onClick={clear} />
+        <div className={styles.buttonsContainer}>
+          <Button
+            text="Submit"
+            buttonType={styles.submit}
+            onClick={() => addReview(restaurantId, { text, rating, userId })}
+          />
+          <Button text="Clear" buttonType={styles.clear} onClick={clear} />
+        </div>
       </form>
     </div>
   );

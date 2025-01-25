@@ -1,3 +1,3 @@
-export default function RestaurantLoading() {
-  return <div>Restaurant Loading...</div>;
-}
+import Loader from "../loading";
+
+export default Loader;
