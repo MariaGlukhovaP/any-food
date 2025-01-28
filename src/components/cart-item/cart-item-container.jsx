@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getDish } from "../../services/get-dish-by-id";
 import { CartItem } from "./cart-item";
 
-export const CartItemContainer = ({ id }) => {
+export const CartItemContainer = ({ id, amount }) => {
   const [dish, setDish] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -21,5 +21,5 @@ export const CartItemContainer = ({ id }) => {
     return <div>Dish Loading...</div>;
   }
 
-  return <CartItem dish={dish} />;
+  return <CartItem dish={dish} amount={amount} />;
 };

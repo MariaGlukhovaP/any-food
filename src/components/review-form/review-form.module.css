@@ -46,11 +46,11 @@
   padding: 10px 20px;
   border-radius: 5px;
   margin-top: 10px;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
 .submit:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .clear {

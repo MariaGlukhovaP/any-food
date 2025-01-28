@@ -15,9 +15,9 @@ export const Cart = () => {
         <>
           <h3 className={styles.title}>Cart</h3>
           <ul className={styles.cartItems}>
-            {items.map(({ id }) => (
+            {items.map(({ id, amount }) => (
               <li key={id}>
-                <CartItemContainer id={id} />
+                <CartItemContainer id={id} amount={amount} />
               </li>
             ))}
           </ul>

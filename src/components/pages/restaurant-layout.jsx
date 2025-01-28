@@ -8,10 +8,10 @@ export const RestaurantLayout = async ({ params, children }) => {
   const restaurant = await getRestaurant(restaurantId);
 
   return (
-    <div>
+    <>
       <RestaurantContainer restaurantId={restaurantId} />
       <Title>{restaurant.name}</Title>
       {children}
-    </div>
+    </>
   );
 };

@@ -3,6 +3,10 @@
   margin: 50px 30px;
 }
 
+.page.light {
+  background-color: #f8f8f8;
+}
+
 @media (min-width: 992px) {
   .page {
     margin: 50px 200px;

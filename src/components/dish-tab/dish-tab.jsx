@@ -11,7 +11,7 @@ export const DishTab = ({ name, ingredients, price, dishId }) => {
     <Card
       cardTitle={name}
       cardFirstRowItem={ingredients?.join(", ")}
-      cardSecondRowItem={`${price}$`}
+      cardSecondRowItem={`$${price}`}
       cardSideItem={auth.isAuthorized && <DishCounter dishId={dishId} />}
     />
   );

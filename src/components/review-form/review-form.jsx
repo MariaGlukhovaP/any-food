@@ -17,7 +17,9 @@ export const ReviewForm = ({ userId, restaurantId }) => {
       <h4 className={styles.formTitle}>Leave your review</h4>
       <form
         className={styles.formContainer}
-        onSubmit={(event) => event.preventDefault()}
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
       >
         <div className={styles.formItem}>
           <span className={styles.inputTitle}>Review</span>
@@ -27,17 +29,18 @@ export const ReviewForm = ({ userId, restaurantId }) => {
             onChange={(event) => setText(event.target.value)}
           />
         </div>
-
         <div className={styles.formItem}>
           <span className={styles.inputTitle}>Rating</span>
           <Counter value={rating} increase={increase} decrease={decrease} />
         </div>
-
         <div className={styles.buttonsContainer}>
           <Button
             text="Submit"
             buttonType={styles.submit}
-            onClick={() => addReview(restaurantId, { text, rating, userId })}
+            onClick={() => {
+              addReview(restaurantId, { text, rating, userId });
+              window.location.reload();
+            }}
           />
           <Button text="Clear" buttonType={styles.clear} onClick={clear} />
         </div>
