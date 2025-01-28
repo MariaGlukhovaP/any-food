@@ -1,8 +1,13 @@
-# React + Vite
+# Сервис для заказа еды из ресторанов
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Использованные технологии
 
-Currently, two official plugins are available:
+- Node.js
+- Vite
+- React
+- Redux Toolkit Query
+- React Router
+- Next.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Превью
+![Preview](public/img/capture_20250128202217333.bmp)
