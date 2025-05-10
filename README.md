@@ -3,6 +3,7 @@
 ## Использованные технологии
 
 - Node.js
+- JavaScript
 - Vite
 - React
 - Redux Toolkit Query
